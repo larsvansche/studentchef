@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html>
-<title>Dynamic Example</title>
+<head>
+    <title>Recepten</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
 <body>
-<form action="DynamicServlet.do" method="get">
-    <div>
-        <input type="text" name="username" />
-        <input type="submit" value="Go!" />
+<header>
+    <div id="logo-wrapper">
+        <img id="logo" src="media/logo.png"/>
     </div>
-</form>
+</header>
+<main>
+    <h1>Recepten voor studenten</h1>
+    <div id="recipes">
+        <!-- area for recipes -->
+    </div>
+</main>
+<footer>
+    Footer
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="scripts/main.js"></script>
+<script src="scripts/recipes.js"></script>
 </body>
 </html>

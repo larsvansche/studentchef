@@ -1,0 +1,191 @@
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 10px;
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+  color: #222222; }
+  body > * {
+    grid-column: 1 / span 1;
+    margin: 0 auto;
+    width: 100%; }
+  body header {
+    display: grid;
+    grid-template-columns: 20%;
+    background-color: #2dcf68;
+    padding: 15px; }
+    body header #logo-wrapper {
+      grid-column: 1 / span 1; }
+      body header #logo-wrapper img {
+        height: 120px; }
+    body header #menu {
+      grid-column: 2 / span 4; }
+      body header #menu ul {
+        display: grid;
+        padding: 0;
+        margin: 0;
+        justify-content: end;
+        grid-template-columns: auto; }
+        body header #menu ul li {
+          display: block;
+          width: 120px;
+          grid-column: 1 / span 1; }
+  @media only screen and (min-width: 600px) {
+    body main {
+      width: 600px; } }
+  @media only screen and (min-width: 930px) {
+    body main {
+      width: 930px; } }
+  @media only screen and (min-width: 1200px) {
+    body main {
+      width: 1200px; } }
+  body main .recipePreview {
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+    transition: 0.2s;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    float: left;
+    width: 100%; }
+    body main .recipePreview:hover {
+      -webkit-box-shadow: 0 5px 15px 5px #999999;
+      -moz-box-shadow: 0 5px 15px 5px #999999;
+      box-shadow: 0 5px 15px 5px #999999;
+      margin-top: 0;
+      margin-bottom: 15px; }
+    body main .recipePreview .data {
+      padding: 10px; }
+      body main .recipePreview .data h2 {
+        margin: 0;
+        color: #222222; }
+      body main .recipePreview .data p {
+        display: block;
+        color: #222222;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        line-height: 26px;
+        font-size: 20px;
+        text-align: justify;
+        margin: 0; }
+  body main #zoombuttons {
+    float: left; }
+  body main #timerbuttons {
+    float: right; }
+  body main #instructions {
+    overflow-x: auto;
+    position: relative;
+    float: left;
+    width: 100%; }
+    body main #instructions #indicator {
+      width: 3px;
+      height: 100%;
+      background-color: red;
+      position: absolute;
+      left: 120px;
+      transition: 0.2s; }
+    body main #instructions table {
+      border-collapse: collapse;
+      border-spacing: 0; }
+      body main #instructions table tr .name {
+        min-width: 120px;
+        max-width: 120px; }
+        body main #instructions table tr .name p:first-child {
+          font-weight: bold; }
+      body main #instructions table tr .timelineSegment, body main #instructions table tr .offset, body main #instructions table tr .step {
+        transition: 0.2s; }
+      body main #instructions table tr .step {
+        background-color: #999999;
+        height: 100px;
+        overflow: hidden;
+        hyphens: auto;
+        border: 1px solid #222222;
+        text-align: center;
+        cursor: pointer; }
+        body main #instructions table tr .step.activeStep {
+          font-weight: bold;
+          background-color: #2dcf68; }
+  body main #descriptionField {
+    margin-top: 20px;
+    margin-left: 120px;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 20px;
+    float: left;
+    border: 2px solid #222222;
+    background-color: #2dcf68;
+    position: relative;
+    width: calc(100% - 120px); }
+    body main #descriptionField:before {
+      border: 2px solid #222222;
+      background-color: #2dcf68;
+      transform: rotate(45deg);
+      display: block;
+      height: 25px;
+      width: 25px;
+      content: "";
+      z-index: -1;
+      position: absolute;
+      left: 50%;
+      top: -15px; }
+  body #ratingForm {
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto; }
+    body #ratingForm input, body #ratingForm textarea, body #ratingForm label {
+      float: left;
+      width: 50%; }
+    body #ratingForm #userId, body #ratingForm #recipeId {
+      display: none; }
+  body #ratingField {
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto; }
+    body #ratingField .rating {
+      float: left;
+      width: 100%;
+      margin-bottom: 15px; }
+      body #ratingField .rating img {
+        height: 100px;
+        width: 100px;
+        float: left;
+        border-radius: 75px;
+        padding: 15px; }
+      body #ratingField .rating .ratingData {
+        float: left;
+        padding: 10px;
+        border-left: 1px solid #999999;
+        width: calc(100% - 100px); }
+        body #ratingField .rating .ratingData .username {
+          margin-top: 0;
+          float: left;
+          width: 50%; }
+        body #ratingField .rating .ratingData .stars {
+          float: right;
+          tet-align: right;
+          width: 50%; }
+        body #ratingField .rating .ratingData .description {
+          float: left;
+          width: 100%; }
+        body #ratingField .rating .ratingData .datetime {
+          color: #999999;
+          margin-bottom: 0;
+          float: left;
+          width: 100%; }
+  body footer {
+    color: #eeeeee;
+    background-color: #13572a;
+    padding: 15px; }
+
+/*# sourceMappingURL=main.css.map */

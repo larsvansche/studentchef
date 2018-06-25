@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recept</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<header>
+    <div id="logo-wrapper">
+        <img id="logo" src="media/logo.png"/>
+    </div>
+</header>
+<main>
+    <h1></h1>
+    <p id="description"></p>
+    <div id="rating"></div>
+    <p id="preptime"></p>
+
+    <div id="zoombuttons">
+        <button id="zoomout">Zoom uit</button>
+        <button id="zoomin">Zoom in</button>
+    </div>
+
+    <div id="timerbuttons">
+        <span id="timerClock">0</span>
+        <button id="moveback">Terug</button>
+        <button id="startstop">Start</button>
+        <button id="moveforward">Vooruit</button>
+    </div>
+
+    <div id="instructions">
+        <div id="indicator">&nbsp;</div>
+        <table id="timeline">
+            <tr>
+                <td class="name">&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    <div id="descriptionField"></div>
+
+    <h1>Beoordelingen</h1>
+
+    <form id="ratingForm" action="restservices/ratings" method="POST" data-action="create">
+        <input id="userId" type="number" name="userId"/>
+        <input id="recipeId" type="number" name="recipeId"/>
+        <label for="value">Waarde</label><input id="value" type="number" name="value"/>
+        <label for="recipeDescription">Omschrijving</label><textarea id="recipeDescription" name="description"></textarea>
+        <input type="submit" value="Verzenden"/>
+    </form>
+
+    <div id="ratingField">
+        <!-- field for ratings -->
+    </div>
+</main>
+
+<footer>
+    Footer
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="scripts/main.js"></script>
+<script src="scripts/singleRecipe.js"></script>
+</body>
+</html>
+
+
