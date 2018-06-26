@@ -1,27 +1,35 @@
 package model;
 
+import persistence.RatingDao;
 import persistence.RatingPostgresDaoImpl;
-import persistence.RecipeDao;
-import persistence.RecipePostgresDaoImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class RecipeService {
-    private RecipeDao recipeDao;
-    private RecipeDao ratingDao;
+public class RatingService {
+    private RatingDao ratingDao;
 
-    public RecipeService() {
-        this.recipeDao = new RecipePostgresDaoImpl();
+    public RatingService() {
         this.ratingDao = new RatingPostgresDaoImpl();
     }
 
-    public List<Recipe> getAllRecipes() {
-        return this.recipeDao.findAll();
+    public Rating getRatingByRecipeIdAndUserId(int userId, int recipeId) {
+        return this.ratingDao.findByRecipeIdAndUserId(userId, recipeId);
     }
 
-    public Recipe getRecipeById(int id) {
-        return this.recipeDao.findById(id);
+    public ArrayList<Rating> getRatingByRecipeId(int recipeId) {
+        return this.ratingDao.findByRecipeId(recipeId);
     }
 
+    public Rating createRating(Rating rating) {
+        return this.ratingDao.createRating(rating);
+    }
 
+    public Rating updateRating(Rating rating) {
+        return this.ratingDao.updateRating(rating);
+    }
+
+    public int deleteRating(int userId, int recipeId) {
+        return this.ratingDao.deleteRating(userId, recipeId);
+    }
 }

@@ -1,8 +1,8 @@
-package nl.hu.v1wac.firstapp.persistence;
+package persistence;
 
-import java.sql.Connection;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
+import java.sql.Connection;
 
 public class PostgresBaseDao {
     protected final Connection getConnection() {

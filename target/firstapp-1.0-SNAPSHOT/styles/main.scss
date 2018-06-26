@@ -1,0 +1,277 @@
+// Color variables
+$color-green-base: #2dcf68;
+$color-green-dark: #13572a;
+
+$color-white: #eeeeee;
+$color-grey: #999999;
+$color-black: #222222;
+
+* {
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 10px;
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+  color: $color-black;
+
+  & > * {
+    grid-column: 1 / span 1; // occupy 1 and span 1
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 20%;
+
+    background-color: $color-green-base;
+    padding: 15px;
+
+    #logo-wrapper {
+      grid-column: 1 / span 1; // occupy 1 and span 1
+
+      img {
+        height: 120px;
+      }
+    }
+    #menu {
+      grid-column: 2 / span 4; // occupy 1 and span 1
+
+      ul {
+        display: grid;
+        padding: 0;
+        margin: 0;
+        justify-content: end;
+        grid-template-columns: auto;
+
+        li {
+          display: block;
+          width: 120px;
+          grid-column: 1 / span 1;
+        }
+      }
+    }
+  }
+
+  main {
+    @media only screen and (min-width: 600px) {
+      width: 600px;
+    }
+    @media only screen and (min-width: 930px) {
+      width: 930px;
+    }
+    @media only screen and (min-width: 1200px) {
+      width: 1200px;
+    }
+
+    .recipePreview {
+      display: flex;
+      flex-direction: row;
+      height: 150px;
+      transition: 0.2s;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      text-decoration: none;
+      float: left;
+      width: 100%;
+
+      &:hover {
+        -webkit-box-shadow: 0 5px 15px 5px $color-grey;
+        -moz-box-shadow: 0 5px 15px 5px $color-grey;
+        box-shadow: 0 5px 15px 5px $color-grey;
+        margin-top: 0;
+        margin-bottom: 15px;
+      }
+
+      .image {
+      }
+
+      .data {
+        padding: 10px;
+
+        h2 {
+          margin: 0;
+          color: $color-black;
+        }
+
+        p {
+          display: block;
+          color: $color-black;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
+          line-height: 26px;
+          font-size: 20px;
+          text-align: justify;
+          margin: 0;
+        }
+      }
+    }
+
+    #zoombuttons {
+      float: left;
+    }
+
+    #timerbuttons {
+      float: right;
+    }
+
+    #instructions {
+      overflow-x: auto;
+      position: relative;
+      float: left;
+      width: 100%;
+
+      #indicator {
+        width: 3px;
+        height: 100%;
+        background-color: red;
+        position: absolute;
+        left: 120px;
+        transition: 0.2s;
+      }
+
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+
+        tr {
+          .name {
+            min-width: 120px;
+            max-width: 120px;
+
+            p:first-child {
+              font-weight: bold;
+            }
+          }
+          .timelineSegment, .offset, .step {
+            transition: 0.2s;
+          }
+          .step {
+            background-color: $color-grey;
+            height: 100px;
+            overflow: hidden;
+            hyphens: auto;
+            border: 1px solid $color-black;
+            text-align: center;
+            cursor: pointer;
+
+            &.activeStep {
+              font-weight: bold;
+              background-color: $color-green-base;
+            }
+          }
+        }
+      }
+    }
+
+    #descriptionField {
+      margin-top: 20px;
+      margin-left: 120px;
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 20px;
+      float:left;
+      border: 2px solid $color-black;
+      background-color: $color-green-base;
+      position: relative;
+      width: calc(100% - 120px);
+
+      &:before {
+        border: 2px solid $color-black;
+        background-color: $color-green-base;
+        transform: rotate(45deg);
+        display: block;
+        height: 25px;
+        width: 25px;
+        content: "";
+        z-index: -1;
+        position: absolute;
+        left: 50%;
+        top: -15px;
+      }
+    }
+  }
+
+  #ratingForm {
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    input, textarea, label {
+      float: left;
+      width: 50%;
+    }
+
+    #userId, #recipeId {
+      display: none;
+    }
+  }
+
+  #ratingField {
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    .rating {
+      float: left;
+      width: 100%;
+      margin-bottom: 15px;
+
+      img {
+        height: 100px;
+        width: 100px;
+        float: left;
+        border-radius: 75px;
+        padding: 15px;
+      }
+
+      .ratingData {
+        float: left;
+        padding: 10px;
+        border-left: 1px solid $color-grey;
+        width: calc(100% - 100px);
+
+        .username {
+          margin-top: 0;
+          float: left;
+          width: 50%;
+        }
+
+        .stars {
+          float:right;
+          tet-align: right;
+          width: 50%;
+        }
+
+        .description {
+          float: left;
+          width: 100%;
+        }
+
+        .datetime {
+          color: $color-grey;
+          margin-bottom: 0;
+          float: left;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  footer {
+    color: $color-white;
+    background-color: $color-green-dark;
+    padding: 15px;
+  }
+}

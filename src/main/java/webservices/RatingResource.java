@@ -1,49 +1,77 @@
 package webservices;
 
-import model.Recipe;
-import model.RecipeService;
-import model.ServiceProvider;
+import model.*;
 
-import java.util.List;
-import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Date;
 
-@Path("/recipes")
-public class RecipeResource {
-    private RecipeService service;
+@Path("/ratings")
+public class RatingResource {
+    private RatingService service;
 
-    public RecipeResource() {
-        this.service = ServiceProvider.getRecipeService();
+    public RatingResource() {
+        this.service = ServiceProvider.getRatingService();
     }
 
     @GET
+    @Path("/{recipeId}/{userId}")
     @Produces("application/json")
-    public Response getRecipes() {
-        System.out.println("Fetching recipes...");
-
-        List<Recipe> countries = this.service.getAllRecipes();
-        return Response.ok(countries).build();
+    public Response getRatingByRecipeId(@PathParam("recipeId") int recipeId, @PathParam("userId") int userId) {
+        Rating rating = this.service.getRatingByRecipeIdAndUserId(userId, recipeId);
+        return Response.ok(rating).build();
     }
 
     @GET
-    @Path("/{id}")
+    @Path("/{recipeId}")
     @Produces("application/json")
-    public Response getRecipeById(@PathParam("id") int id) {
-        System.out.println("Fetching recipe with code " + id + "...");
-
-        Recipe recipe = this.service.getRecipeById(id);
-        return Response.ok(recipe).build();
+    public Response getRatingByRecipeId(@PathParam("recipeId") int recipeId) {
+        ArrayList<Rating> ratings = this.service.getRatingByRecipeId(recipeId);
+        return Response.ok(ratings).build();
     }
 
-    // GET for all ratings of a recipe: /ratings/{recipeId}
+    @POST
+    @Produces("application/json")
+    public Response createRating(@FormParam("userId") int userId, @FormParam("recipeId") int recipeId, @FormParam("value") int value, @FormParam("description") String description) {
+        Rating rating = new Rating(recipeId, userId, value, new Date(), description);
+        System.out.println(rating);
+        if (this.service.createRating(rating) != null) {
+            System.out.println("Rating succesfully saved!");
 
-    // GET for single rating of a recipe: /rating/{ratingId}
+            Rating newRating = service.getRatingByRecipeIdAndUserId(userId, recipeId);
 
-    // POST for create beoordeling: /ratings
+            return Response.ok(newRating).build();
+        } else {
+            System.out.println("Rating not saved!");
+            return Response.status(500).build();
+        }
+    }
 
-    // PUT for update beoordeling: /rating/{ratingId}
+    @PUT
+    @Produces("application/json")
+    public Response updateRating(@FormParam("userId") int userId, @FormParam("recipeId") int recipeId, @FormParam("value") int value, @FormParam("description") String description) {
+        Rating rating = new Rating(recipeId, userId, value, new Date(), description);
+        if (this.service.updateRating(rating) == rating) {
+            System.out.println("Rating succesfully updated!");
+            return Response.ok(rating).build();
+        } else {
+            System.out.println("Rating not updated!");
+            return Response.status(500).build();
+        }
+    }
 
     // DELETE for delete beoordeling /rating/{ratingId}
+    @DELETE
+    @Path("/{recipeId}/{userId}")
+    @Produces("application/json")
+    public Response deleteRating(@PathParam("userId") int userId, @PathParam("recipeId") int recipeId) {
+        if (this.service.deleteRating(userId, recipeId) == 1) {
+            System.out.println("Rating succesfully deleted!");
+            return Response.ok().build();
+        } else {
+            System.out.println("Rating not deleted!");
+            return Response.status(500).build();
+        }
+    }
 }
