@@ -1,9 +1,8 @@
-package nl.webservices;
+package webservices;
 
-import model.*;
-import nl.model.Rating;
-import nl.model.RatingService;
-import nl.model.ServiceProvider;
+import model.Rating;
+import model.RatingService;
+import model.ServiceProvider;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;

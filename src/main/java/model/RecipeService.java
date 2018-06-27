@@ -1,7 +1,7 @@
-package nl.model;
+package model;
 
-import nl.persistence.RecipeDao;
-import nl.persistence.RecipePostgresDaoImpl;
+import persistence.RecipeDao;
+import persistence.RecipePostgresDaoImpl;
 
 import java.util.List;
 

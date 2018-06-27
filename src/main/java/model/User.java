@@ -1,4 +1,4 @@
-package nl.model;
+package model;
 
 public class User {
     private int id;

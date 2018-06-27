@@ -1,6 +1,6 @@
-package nl.persistence;
+package persistence;
 
-import nl.model.Rating;
+import model.Rating;
 
 import java.util.ArrayList;
 

@@ -1,8 +1,8 @@
-package nl.webservices;
+package webservices;
 
-import nl.model.Recipe;
-import nl.model.RecipeService;
-import nl.model.ServiceProvider;
+import model.ServiceProvider;
+import model.Recipe;
+import model.RecipeService;
 
 import java.util.List;
 import javax.ws.rs.*;

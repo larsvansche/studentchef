@@ -1,7 +1,7 @@
-package nl.servlets;
+package servlets;
 
-import nl.webservices.RatingResource;
-import nl.webservices.RecipeResource;
+import webservices.RatingResource;
+import webservices.RecipeResource;
 
 import java.io.*;
 import javax.servlet.ServletException;

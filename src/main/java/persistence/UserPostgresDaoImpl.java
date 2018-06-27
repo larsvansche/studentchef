@@ -1,6 +1,6 @@
-package nl.persistence;
+package persistence;
 
-import nl.model.User;
+import model.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

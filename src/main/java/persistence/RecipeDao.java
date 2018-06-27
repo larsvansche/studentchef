@@ -1,6 +1,6 @@
-package nl.persistence;
+package persistence;
 
-import nl.model.Recipe;
+import model.Recipe;
 
 import java.util.List;
 

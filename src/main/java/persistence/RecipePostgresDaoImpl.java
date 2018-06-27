@@ -1,8 +1,8 @@
-package nl.persistence;
+package persistence;
 
-import nl.model.Rating;
-import nl.model.Recipe;
-import nl.model.RatingService;
+import model.RatingService;
+import model.Rating;
+import model.Recipe;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -1,6 +1,6 @@
-package nl.persistence;
+package persistence;
 
-import nl.model.User;
+import model.User;
 
 public interface UserDao {
     public User findById(int id);
