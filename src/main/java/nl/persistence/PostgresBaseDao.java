@@ -1,4 +1,4 @@
-package persistence;
+package nl.persistence;
 
 import javax.naming.InitialContext;
 import javax.sql.DataSource;

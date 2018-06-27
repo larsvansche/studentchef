@@ -1,10 +1,9 @@
-package model;
+package nl.model;
 
-import persistence.RatingDao;
-import persistence.RatingPostgresDaoImpl;
+import nl.persistence.RatingDao;
+import nl.persistence.RatingPostgresDaoImpl;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class RatingService {
     private RatingDao ratingDao;

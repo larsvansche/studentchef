@@ -1,4 +1,4 @@
-package model;
+package nl.model;
 
 public class ServiceProvider {
     private static RecipeService recipeService = new RecipeService();

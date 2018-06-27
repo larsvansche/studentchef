@@ -1,9 +1,6 @@
-package persistence;
+package nl.persistence;
 
-import model.Rating;
-import model.Recipe;
-import model.User;
-import persistence.UserDao;
+import nl.model.Rating;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,11 +9,8 @@ import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 public class RatingPostgresDaoImpl extends PostgresBaseDao implements RatingDao {
     private UserDao userDaoPostgresImpl;

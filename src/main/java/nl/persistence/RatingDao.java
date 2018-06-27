@@ -1,10 +1,8 @@
-package persistence;
+package nl.persistence;
 
-import model.Rating;
-import model.Recipe;
+import nl.model.Rating;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public interface RatingDao {
     public Rating findByRecipeIdAndUserId(int userId, int recipeId);

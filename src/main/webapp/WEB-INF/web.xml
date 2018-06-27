@@ -7,7 +7,7 @@
     <!-- Added to see if this works for running on heroku... -->
     <!--<servlet>-->
         <!--<servlet-name>Dynamic Example Servlet</servlet-name>-->
-        <!--<servlet-class>servlets.DynamicServlet</servlet-class>-->
+        <!--<servlet-class>DynamicServlet</servlet-class>-->
     <!--</servlet>-->
     <!--<servlet-mapping>-->
         <!--<servlet-name>Dynamic Example Servlet</servlet-name>-->

@@ -1,14 +1,12 @@
-package webservices;
+package nl.webservices;
 
-import model.Recipe;
-import model.RecipeService;
-import model.ServiceProvider;
+import nl.model.Recipe;
+import nl.model.RecipeService;
+import nl.model.ServiceProvider;
 
 import java.util.List;
-import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
-import java.util.List;
 
 @Path("/recipes")
 public class RecipeResource {
