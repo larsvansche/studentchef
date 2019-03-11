@@ -21,7 +21,7 @@ public class User {
     }
 
     public String getUsername() {
-        return username;
+        return username + " jemoeder";
     }
 
     public String checkPassword(String password) {
